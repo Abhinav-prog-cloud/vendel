@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vendel — Futuristic Vendor Marketplace</title>
+  
+  <!-- Google Fonts for futuristic vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="vendel.css" />
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <nav>
+      <span class="logo">Vendel</span>
+      <ul>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Vendors</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>
+        Discover <span class="glow">Cheap</span> Delivery.<br />
+        <span class="neon">Direct from Vendors</span>
+      </h1>
+      <button class="cta">Shop Now</button>
+    </div>
+  </div>
+
+  <!-- Products Grid -->
+  <section class="products" aria-label="Product Listings">
+    <!-- Products dynamically injected here -->
+  </section>
+
+  <!-- Shopping Cart Sidebar -->
+  <div id="cart-sidebar" class="cart-sidebar" aria-label="Shopping Cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items" class="cart-items" tabindex="0">
+      <!-- Cart items injected dynamically -->
+    </div>
+    <div class="cart-footer">
+      <p>Total: $<span id="cart-total">0.00</span></p>
+      <button id="checkout-btn" disabled>Checkout</button>
+    </div>
+    <button id="cart-close" aria-label="Close Cart">&times;</button>
+  </div>
+
+  <!-- Cart Toggle Button -->
+  <button id="cart-toggle" aria-label="Open Cart">🛒 Cart (<span id="cart-count">0</span>)</button>
+
+  <!-- Authentication Modal -->
+  <div id="auth-modal" class="auth-modal hidden" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+    <div class="auth-content">
+      <button id="auth-close" class="auth-close" aria-label="Close Authentication Modal">&times;</button>
+      <h2 id="auth-title">Login to Vendel</h2>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form active" novalidate>
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" name="email" required autocomplete="username" />
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" required minlength="6" autocomplete="current-password" />
+
+        <button type="submit">Login</button>
+        <p>
+          Don't have an account? <a href="#" id="show-register">Register here</a>
+        </p>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register-form" class="auth-form hidden" novalidate>
+        <label for="register-name">Full Name</label>
+        <input type="text" id="register-name" name="name" required minlength="3" autocomplete="name" />
+
+        <label for="register-email">Email</label>
+        <input type="email" id="register-email" name="email" required autocomplete="email" />
+
+        <label for="register-password">Password</label>
+        <input type="password" id="register-password" name="password" required minlength="6" autocomplete="new-password" />
+
+        <button type="submit">Register</button>
+        <p>
+          Already have an account? <a href="#" id="show-login">Login here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Example XML embedded in HTML comments or linked externally -->
+  <!-- 
+    Example XML snippet (store in a separate file if preferred, e.g., categories.xml)
+    <categories>
+      <category id="1" name="Electronics" />
+      <category id="2" name="Groceries" />
+      <category id="3" name="Clothing" />
+      <category id="4" name="Home & Garden" />
+    </categories>
+  -->   
+
+  <!-- Main JavaScript -->
+  <script src="vendel.js"></script>
+</body>
+</html>
